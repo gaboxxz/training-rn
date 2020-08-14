@@ -1,6 +1,6 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  extends: ['wolox-react-native'],
+  settings: {
+    'import/ignore': ['node_modules'],
+  }
 };
