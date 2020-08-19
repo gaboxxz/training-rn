@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { white, shadow, textColor } from '@constants/colors';
+import { white, shadow, textColor, grey } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
@@ -36,6 +36,7 @@ export default StyleSheet.create({
   },
   imageStyle: {
     width: 43,
-    height: 60
+    height: 60,
+    backgroundColor: grey
   }
 });
