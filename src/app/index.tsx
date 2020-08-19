@@ -9,8 +9,8 @@ const App = () => {
       <View style={Styles.mainViewStyle}>
         <BookItem
           title="The lord of the rings"
-          detail="JRR Tolkien"
-          imageSource={{ uri: 'https://picsum.photos/60/100' }}
+          author="JRR Tolkien"
+          imageUrl={{ uri: 'https://picsum.photos/60/100' }}
         />
       </View>
     </SafeAreaView>

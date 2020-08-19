@@ -5,16 +5,16 @@ import styles from './styles';
 
 interface Props {
   title: string;
-  detail: string;
-  imageSource: object;
+  author: string;
+  imageUrl: object;
 }
-function BookItem({ title, detail, imageSource }: Props) {
+function BookItem({ title, author, imageUrl }: Props) {
   return (
     <TouchableOpacity style={styles.container}>
-      <Image source={imageSource} style={styles.imageStyle} resizeMode="cover" />
-      <View style={styles.textsView}>
-        <Text style={styles.titleStyle}>{title}</Text>
-        <Text style={styles.detailStyle}>{detail}</Text>
+      <Image source={imageUrl} style={styles.imageStyle} resizeMode="cover" />
+      <View>
+        <Text style={[styles.textBasic, styles.titleStyle]}>{title}</Text>
+        <Text style={[styles.textBasic, styles.authorStyle]}>{author}</Text>
       </View>
     </TouchableOpacity>
   );

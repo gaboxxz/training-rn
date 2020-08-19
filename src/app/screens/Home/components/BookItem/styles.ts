@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { white, shadow } from '@constants/colors';
+import { white, shadow, textColor } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
@@ -16,23 +16,27 @@ export default StyleSheet.create({
     backgroundColor: white,
     borderWidth: 10,
     height: 100,
-    width: 350,
+    width: '89%',
     borderRadius: 10,
     margin: 10,
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignSelf: 'center'
   },
-  titleStyle: {
-    fontWeight: 'bold',
-    marginBottom: 5
-  },
-  detailStyle: {},
-  textsView: {
+  textBasic: {
+    color: textColor,
     marginLeft: 10,
     flex: 1
   },
+  authorStyle: {
+    fontSize: 14
+  },
+  titleStyle: {
+    fontWeight: '400',
+    fontSize: 20
+  },
   imageStyle: {
-    width: 45,
+    width: 43,
     height: 60
   }
 });
