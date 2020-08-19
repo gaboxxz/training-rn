@@ -16,10 +16,9 @@ export default StyleSheet.create({
     backgroundColor: white,
     borderWidth: 10,
     height: 100,
-    width: '89%',
+    width: '100%',
     borderRadius: 10,
     margin: 10,
-    display: 'flex',
     flexDirection: 'row',
     alignSelf: 'center'
   },

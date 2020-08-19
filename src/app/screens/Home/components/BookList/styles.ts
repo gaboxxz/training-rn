@@ -7,6 +7,9 @@ export default StyleSheet.create({
     backgroundColor: lightBlue
   },
   contentContainer: {
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    width: '100%',
+    backgroundColor: lightBlue
   }
 });
