@@ -35,7 +35,7 @@ export default StyleSheet.create({
     fontSize: 16
   },
   titleStyle: {
-    fontWeight: '800',
+    fontWeight: 'bold',
     fontSize: 18
   },
   imageStyle: {
