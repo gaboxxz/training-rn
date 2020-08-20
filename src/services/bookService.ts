@@ -2,7 +2,7 @@ export const bookList = [
   {
     id: 1,
     author: 'Emmie Thiel',
-    title: 'Ring of Bright Water',
+    title: 'Ring of Bright Water and the text is really long',
     genre: 'Short story',
     publisher: 'Butterworth-Heinemann',
     year: '1968',

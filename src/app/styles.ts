@@ -6,11 +6,5 @@ export default StyleSheet.create({
   },
   mainViewStyle: {
     flex: 1
-  },
-  scrollViewContainerStyle: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
   }
 });

@@ -26,7 +26,7 @@ function BookItem({ title, author, imageUrl }: Props) {
   return (
     <TouchableOpacity style={styles.container}>
       {image(imageUrl)}
-      <View>
+      <View style={styles.textContainer}>
         <Text style={[styles.textBasic, styles.titleStyle]}>{title}</Text>
         <Text style={[styles.textBasic, styles.authorStyle]}>{author}</Text>
       </View>

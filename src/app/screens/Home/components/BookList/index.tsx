@@ -12,7 +12,12 @@ function BookList() {
   );
   return (
     <View style={styles.contentContainer}>
-      <FlatList data={bookList} renderItem={renderItem} keyExtractor={(item: Book) => `${item.id}`} />
+      <FlatList
+        style={styles.bookList}
+        data={bookList}
+        renderItem={renderItem}
+        keyExtractor={(item: Book) => `${item.id}`}
+      />
     </View>
   );
 }
