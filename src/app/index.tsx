@@ -1,15 +1,15 @@
-import { SafeAreaView } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 
 import BookList from '@app/screens/Home/components/BookList';
 import styles from './styles';
 
-const App = () => {
+const HomeScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <BookList />
-    </SafeAreaView>
+    </View>
   );
 };
 
-export default App;
+export default HomeScreen;

@@ -1,6 +1,7 @@
 import { Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 
+import { useNavigation, NavigationAction, NavigationProp } from '@react-navigation/native';
 import styles from './styles';
 
 interface Props {
@@ -23,8 +24,12 @@ const image = (imageUrl: any) => {
   );
 };
 function BookItem({ title, author, imageUrl }: Props) {
+  //TODO: is okey to use like this?
+  const navigation: any = useNavigation();
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.push('Detail', { title, author, imageUrl })}>
       {image(imageUrl)}
       <View style={styles.textContainer}>
         <Text style={[styles.textBasic, styles.titleStyle]}>{title}</Text>
