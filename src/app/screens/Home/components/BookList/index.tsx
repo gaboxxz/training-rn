@@ -10,14 +10,10 @@ function BookList() {
   const renderItem: ListRenderItem<Book> = ({ item }) => (
     <BookItem title={item.title} author={item.author} imageUrl={item.imageUrl} />
   );
+  const idExtractor = (item: Book) => `${item.id}`;
   return (
     <View style={styles.contentContainer}>
-      <FlatList
-        style={styles.bookList}
-        data={bookList}
-        renderItem={renderItem}
-        keyExtractor={(item: Book) => `${item.id}`}
-      />
+      <FlatList style={styles.bookList} data={bookList} renderItem={renderItem} keyExtractor={idExtractor} />
     </View>
   );
 }

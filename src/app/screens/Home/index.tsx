@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BookList from '@app/screens/Home/components/BookList';
+import BookList from './components/BookList';
 
 const Home = () => {
   return <BookList />;

@@ -2,6 +2,7 @@ import { Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 
 import styles from './styles';
+import { Book } from '../../interfaces';
 
 interface Props {
   title: string;
@@ -9,7 +10,7 @@ interface Props {
   imageUrl?: string;
 }
 
-function BookItem({ title, author, imageUrl }: Props) {
+function BookItem({ title, author, imageUrl }: Book) {
   return (
     <TouchableOpacity style={styles.container}>
       {imageUrl ? (
