@@ -1,13 +1,13 @@
 import { SafeAreaView } from 'react-native';
 import React from 'react';
 
-import BookList from '@app/screens/Home/components/BookList';
+import Home from './screens/Home';
 import styles from './styles';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <BookList />
+      <Home />
     </SafeAreaView>
   );
 };
