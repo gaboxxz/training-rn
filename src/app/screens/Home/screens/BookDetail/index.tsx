@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 function BookDetail({ route, navigation }: any) {
-  // const navigation: any = useNavigation();
   const { book } = route.params;
   return (
     <View>
