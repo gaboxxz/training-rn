@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-import { white, shadow, textColor } from '@constants/colors';
+import { white, shadow, textColor, grey } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
+    margin: 7,
     padding: 10,
+    paddingLeft: 20,
     borderColor: white,
     shadowColor: shadow,
     shadowOpacity: 0.2,
@@ -15,28 +17,30 @@ export default StyleSheet.create({
     },
     backgroundColor: white,
     borderWidth: 10,
-    height: 100,
-    width: '89%',
+    height: 110,
+    width: '100%',
     borderRadius: 10,
-    margin: 10,
-    display: 'flex',
     flexDirection: 'row',
     alignSelf: 'center'
+  },
+  textContainer: {
+    flex: 1
   },
   textBasic: {
     color: textColor,
     marginLeft: 10,
-    flex: 1
+    marginBottom: 8
   },
   authorStyle: {
-    fontSize: 14
+    fontSize: 16
   },
   titleStyle: {
-    fontWeight: '400',
-    fontSize: 20
+    fontWeight: 'bold',
+    fontSize: 18
   },
   imageStyle: {
-    width: 43,
-    height: 60
+    width: '13%',
+    height: '100%',
+    backgroundColor: grey
   }
 });
