@@ -8,12 +8,6 @@ function BookDetail({ route, navigation }: any) {
     <View>
       <Text>{book.title}</Text>
       <Text>{book.author}</Text>
-      <Image
-        source={{
-          uri: book.imageUrl
-        }}
-        resizeMode="cover"
-      />
       <View>
         <Button title="Go home" onPress={() => navigation.navigate('Home')} />
       </View>
