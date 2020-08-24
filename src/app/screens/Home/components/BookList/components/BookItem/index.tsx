@@ -11,8 +11,9 @@ interface Props {
 
 function BookItem({ book }: Props) {
   const navigation: any = useNavigation();
+
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.push('Detail', { book })}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Detail', { book })}>
       {book.imageUrl ? (
         <Image
           source={{
