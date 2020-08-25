@@ -15,7 +15,8 @@ module.exports = {
           '@interfaces': './src/interfaces',
           '@redux': './src/redux',
           '@services': './src/services',
-          '@utils': './src/utils'
+          '@utils': './src/utils',
+          '@constants': './src/constants'
         }
       }
     ]

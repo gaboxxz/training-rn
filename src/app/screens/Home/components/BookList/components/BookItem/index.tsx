@@ -2,6 +2,7 @@ import { Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 
 import { useNavigation } from '@react-navigation/native';
+import routes from '@constants/routes';
 import styles from './styles';
 import { Book } from '../../interfaces';
 
@@ -10,9 +11,11 @@ interface Props {
 }
 
 function BookItem({ book }: Props) {
+  // TODO: fix prop any
   const navigation: any = useNavigation();
+  const handlePress = () => navigation.navigate(routes.BookDetail, { book });
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.push('Detail', { book })}>
+    <TouchableOpacity style={styles.container} onPress={() => handlePress()}>
       {book.imageUrl ? (
         <Image
           source={{
