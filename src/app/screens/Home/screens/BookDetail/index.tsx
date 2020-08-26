@@ -1,9 +1,16 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
+import { RootStackParamList } from '@interfaces/navigation';
+import { RouteProp } from '@react-navigation/native';
+import * as routes from '@constants/routes';
 import styles from './styles';
 
-function BookDetail({ route }: any) {
+type BookDetailScreenRouteProp = RouteProp<RootStackParamList, typeof routes.BookDetail>;
+interface Props {
+  route: BookDetailScreenRouteProp;
+}
+function BookDetail({ route }: Props) {
   const { book } = route.params;
   return (
     <View style={styles.container}>

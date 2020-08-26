@@ -31,7 +31,7 @@ export default StyleSheet.create({
   },
   image: {
     width: '27%',
-    height: 130,
+    height: 110,
     backgroundColor: grey
   },
   buttonDefault: {

@@ -5,5 +5,5 @@ export interface Book {
   genre?: string;
   publisher?: string;
   year?: string;
-  imageUrl: string | null;
+  imageUrl?: string;
 }

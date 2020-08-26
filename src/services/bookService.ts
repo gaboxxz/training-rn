@@ -1,12 +1,13 @@
-export const bookList = [
+import { Book } from '@interfaces/books';
+
+export const bookList: Array<Book> = [
   {
     id: 1,
     author: 'Emmie Thiel',
     title: 'Ring of Bright Water and the text is really long',
     genre: 'Short story',
     publisher: 'Butterworth-Heinemann',
-    year: '1968',
-    imageUrl: null
+    year: '1968'
   },
   {
     id: 2,
@@ -14,8 +15,7 @@ export const bookList = [
     title: 'Scavenger Hunt',
     genre: 'other',
     publisher: 'Pocket Books',
-    year: '1989',
-    imageUrl: null
+    year: '1989'
   },
   {
     id: 3,
