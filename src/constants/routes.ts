@@ -1,6 +1,2 @@
-const routes = {
-  Home: 'Home',
-  BookDetail: 'BookDetail'
-};
-
-export default routes;
+export const BookDetail = 'BookDetail';
+export const Home = 'Home';
