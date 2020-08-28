@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
 
 import { RootStackParamList } from '@interfaces/navigation';
 import { RouteProp } from '@react-navigation/native';
@@ -16,13 +16,18 @@ function BookDetail({ route }: Props) {
     <View style={styles.container}>
       <View style={styles.contentContainer}>
         <View style={styles.bookInfoContainer}>
-          <Image
-            style={styles.image}
-            source={{
-              uri: book.imageUrl
-            }}
-            resizeMode="cover"
-          />
+          {book.imageUrl ? (
+            <Image
+              source={{
+                uri: book.imageUrl
+              }}
+              style={styles.image}
+              resizeMode="cover"
+            />
+          ) : (
+            <View style={styles.image} />
+          )}
+
           <View style={styles.textContainer}>
             <Text style={styles.bookTitleText} numberOfLines={1} ellipsizeMode={'tail'}>
               {book.title}
@@ -34,10 +39,10 @@ function BookDetail({ route }: Props) {
           </View>
         </View>
         <View style={styles.buttonsView}>
-          <TouchableOpacity style={[styles.buttonDefault, styles.addToWishListButton]}>
+          <TouchableOpacity style={styles.buttonDefault} onPress={() => null}>
             <Text style={styles.buttonText}>ADD TO WHISHLIST</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.buttonDefault, styles.rentButton]}>
+          <TouchableOpacity style={styles.buttonDefault} onPress={() => null}>
             <Text style={styles.buttonText}>RENT</Text>
           </TouchableOpacity>
         </View>
