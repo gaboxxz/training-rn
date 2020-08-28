@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import { RootStackParamList } from '@interfaces/navigation';
 import { RouteProp } from '@react-navigation/native';
