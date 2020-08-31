@@ -45,19 +45,13 @@ export default StyleSheet.create({
     width: '100%',
     height: 45,
     justifyContent: 'center',
-    marginTop: 10
+    marginTop: 10,
+    borderColor: secondaryBlue,
+    borderWidth: 2
   },
   buttonsView: {
     flexShrink: 1,
     justifyContent: 'flex-start'
-  },
-  addToWishListButton: {
-    borderColor: secondaryBlue,
-    borderWidth: 2
-  },
-  rentButton: {
-    borderColor: secondaryBlue,
-    borderWidth: 2
   },
   textContainer: {
     flex: 1,

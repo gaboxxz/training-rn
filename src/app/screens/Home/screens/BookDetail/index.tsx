@@ -35,10 +35,10 @@ function BookDetail({ route }: Props) {
           </View>
         </View>
         <View style={styles.buttonsView}>
-          <TouchableOpacity style={[styles.buttonDefault, styles.addToWishListButton]}>
+          <TouchableOpacity style={styles.buttonDefault} onPress={() => null}>
             <Text style={styles.buttonText}>ADD TO WHISHLIST</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.buttonDefault, styles.rentButton]}>
+          <TouchableOpacity style={styles.buttonDefault} onPress={() => null}>
             <Text style={styles.buttonText}>RENT</Text>
           </TouchableOpacity>
         </View>
