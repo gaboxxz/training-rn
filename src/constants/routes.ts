@@ -1,2 +1,2 @@
-export const BookDetail = 'BookDetail';
-export const Home = 'Home';
+export const BookDetail = 'Book Detail';
+export const Home = 'LIBRARY';
