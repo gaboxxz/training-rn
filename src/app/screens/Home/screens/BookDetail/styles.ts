@@ -8,24 +8,31 @@ export default StyleSheet.create({
   },
   contentContainer: {
     backgroundColor: white,
-    flex: 1,
-    marginHorizontal: 25,
-    marginTop: 20,
-    paddingHorizontal: 30,
-    paddingVertical: 20,
+    marginLeft: 25,
+    marginRight: 25,
+    marginTop: 10,
+    marginBottom: 10,
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 20,
+    paddingBottom: 20,
     shadowColor: shadow,
     shadowOpacity: 0.2,
     shadowRadius: 0.8,
     shadowOffset: {
       height: 0.5,
       width: 0
-    },
-    borderRadius: 10
+    }
+  },
+  bookContentContainer: {
+    flexShrink: 0
+  },
+  bookCommentsContainer: {
+    flexShrink: 1
   },
   bookInfoContainer: {
     flexDirection: 'row',
-    flex: 1,
-    flexGrow: 1
+    flexShrink: 1
   },
   image: {
     width: '27%',
@@ -43,9 +50,8 @@ export default StyleSheet.create({
     borderWidth: 2
   },
   buttonsView: {
-    flex: 1,
-    flexGrow: 1,
-    justifyContent: 'center'
+    flexShrink: 1,
+    justifyContent: 'flex-start'
   },
   textContainer: {
     flex: 1,
