@@ -7,3 +7,12 @@ export interface Book {
   year?: string;
   imageUrl?: string;
 }
+
+export interface BookComment {
+  id?: number;
+  bookId?: number;
+  author?: string;
+  gender?: 'M' | 'F';
+  text: string;
+  date: Date;
+}
