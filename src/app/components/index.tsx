@@ -29,9 +29,9 @@ const TabNavigator = createBottomTabNavigator();
 
 function TabNavigation() {
   return (
-    <TabNavigator.Navigator screenOptions={screenOpts}>
-      <TabNavigator.Screen component={Test} name="Tes2t" />
+    <TabNavigator.Navigator>
       <TabNavigator.Screen component={HomeScreen} name="Home" />
+      <TabNavigator.Screen component={Test} name="Test screen" options={screenOpts} />
     </TabNavigator.Navigator>
   );
 }
