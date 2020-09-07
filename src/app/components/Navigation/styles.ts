@@ -9,6 +9,7 @@ export default StyleSheet.create({
     backgroundColor: lightBlue
   },
   headerBackImage: {
-    marginLeft: Platform.OS === 'ios' ? 10 : 0
+    marginLeft: Platform.OS === 'ios' ? 10 : 0,
+    height: 20
   }
 });

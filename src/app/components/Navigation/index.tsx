@@ -21,7 +21,7 @@ const defaultHeaderOpts: StackHeaderOptions = {
   },
   headerBackground: () => <Image source={backgroundImage} style={styles.imageStyle} />,
   headerBackImage: () => (
-    <Image source={backButtonImage} resizeMode="contain" style={styles.headerBackImage} height={30} />
+    <Image source={backButtonImage} resizeMode="contain" style={styles.headerBackImage} />
   )
 };
 
