@@ -1,11 +1,12 @@
 import React from 'react';
 
 import * as routes from '@constants/routes';
-import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
+import { createStackNavigator, HeaderBackButton, HeaderTitle } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaView, Image, Button } from 'react-native';
 import { StackHeaderOptions } from '@react-navigation/stack/lib/typescript/src/types';
 import { secondaryBlue } from '@constants/colors';
+import { Header } from 'react-native/Libraries/NewAppScreen';
 import Test from '../screens/test';
 import BookDetail from '../screens/Home/screens/BookDetail';
 import HomeScreen from '../screens/Home';
@@ -30,8 +31,8 @@ const TabNavigator = createBottomTabNavigator();
 function TabNavigation() {
   return (
     <TabNavigator.Navigator>
-      <TabNavigator.Screen component={HomeScreen} name="Home" />
-      <TabNavigator.Screen component={Test} name="Test screen" options={screenOpts} />
+      <TabNavigator.Screen component={HomeScreen} name="Library" />
+      <TabNavigator.Screen component={Test} name="Test screen" options={{ tabBarLabel: 'tesas' }} />
     </TabNavigator.Navigator>
   );
 }
@@ -39,7 +40,7 @@ function TabNavigation() {
 const HomeStack = createStackNavigator();
 function HomeNavigator() {
   return (
-    <HomeStack.Navigator screenOptions={screenOpts}>
+    <HomeStack.Navigator>
       <HomeStack.Screen name={routes.Home} component={TabNavigation} />
       <HomeStack.Screen name={routes.BookDetail} component={BookDetail} />
     </HomeStack.Navigator>
