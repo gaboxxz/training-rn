@@ -1,14 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image } from 'react-native';
 import { StackHeaderOptions } from '@react-navigation/stack/lib/typescript/src/types';
-
-import * as routes from '@constants/routes';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import BookDetail from '@app/screens/Home/screens/BookDetail';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { DefaultTabNavigationProp } from '@interfaces/navigation';
+
+import * as routes from '@constants/routes';
+import BookDetail from '@app/screens/Home/screens/BookDetail';
 import { secondaryBlue, grey } from '@constants/colors';
+import CustomHeaderButton from '@app/components/CustomHeaderButton';
 import HomeScreen from '../../screens/Home';
 import backgroundImage from './assets/bc_nav_bar.png';
 import backButtonImage from './assets/ic_back.png';
@@ -43,21 +44,20 @@ const tabHeaderOptions = ({ route }: DefaultTabNavigationProp) => {
     ...defaultHeaderOpts,
     headerTitle: getFocusedRouteNameFromRoute(route),
     headerLeft: () => (
-      <TouchableOpacity onPress={() => null}>
-        <Image source={notificationsIconImage} resizeMode="contain" style={styles.headerIconStyle} />
-      </TouchableOpacity>
+      <CustomHeaderButton imageSource={notificationsIconImage} resizeMode="contain" onPress={() => null} />
     ),
     headerRight: () =>
       getFocusedRouteNameFromRoute(route) === routes.Home && (
-        <TouchableOpacity onPress={() => null}>
-          <Image source={searchIconImage} resizeMode="contain" style={styles.headerIconStyle} />
-        </TouchableOpacity>
+        <CustomHeaderButton imageSource={searchIconImage} resizeMode="contain" onPress={() => null} />
       )
   };
 };
 
+interface TabBarIconProps {
+  focused: boolean;
+}
 const tabScreenOptions = ({ route }: DefaultTabNavigationProp) => ({
-  tabBarIcon: ({ focused }: any) => {
+  tabBarIcon: ({ focused }: TabBarIconProps) => {
     let image = null;
     switch (route.name) {
       case routes.Home:
@@ -99,6 +99,7 @@ function TabNavigation() {
 }
 
 const Stack = createStackNavigator();
+
 function HomeNavigator() {
   return (
     <Stack.Navigator screenOptions={defaultHeaderOpts}>
