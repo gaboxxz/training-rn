@@ -11,5 +11,6 @@ export default StyleSheet.create({
   headerBackImage: {
     marginLeft: Platform.OS === 'ios' ? 10 : 0,
     height: 20
-  }
+  },
+  tabIconImage: { flex: 1 }
 });

@@ -2,8 +2,8 @@ import React from 'react';
 
 import BookList from './components/BookList';
 
-const Home = () => {
+function Home() {
   return <BookList />;
-};
+}
 
 export default Home;
