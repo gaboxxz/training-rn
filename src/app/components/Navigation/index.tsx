@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Image } from 'react-native';
 import { StackHeaderOptions } from '@react-navigation/stack/lib/typescript/src/types';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { DefaultTabNavigationProp } from '@interfaces/navigation';
 
@@ -40,6 +40,7 @@ const defaultHeaderOpts: StackHeaderOptions = {
 };
 
 const tabHeaderOptions = ({ route }: DefaultTabNavigationProp) => {
+  const actualRoute = getFocusedRouteNameFromRoute(route);
   return {
     ...defaultHeaderOpts,
     headerTitle: getFocusedRouteNameFromRoute(route),
@@ -47,7 +48,8 @@ const tabHeaderOptions = ({ route }: DefaultTabNavigationProp) => {
       <CustomHeaderButton imageSource={notificationsIconImage} resizeMode="contain" onPress={() => null} />
     ),
     headerRight: () =>
-      getFocusedRouteNameFromRoute(route) === routes.Home && (
+      // TODO: Fix compare undefined. The actual route comes empty when the tab loads for the first time
+      (actualRoute === routes.Home || actualRoute === undefined) && (
         <CustomHeaderButton imageSource={searchIconImage} resizeMode="contain" onPress={() => null} />
       )
   };
@@ -56,7 +58,7 @@ const tabHeaderOptions = ({ route }: DefaultTabNavigationProp) => {
 interface TabBarIconProps {
   focused: boolean;
 }
-const tabScreenOptions = ({ route }: DefaultTabNavigationProp) => ({
+const tabScreenOptions = ({ route }: DefaultTabNavigationProp): BottomTabNavigationOptions => ({
   tabBarIcon: ({ focused }: TabBarIconProps) => {
     let image = null;
     switch (route.name) {
@@ -102,9 +104,9 @@ const Stack = createStackNavigator();
 
 function HomeNavigator() {
   return (
-    <Stack.Navigator screenOptions={defaultHeaderOpts}>
+    <Stack.Navigator>
       <Stack.Screen name={routes.Home} component={TabNavigation} options={tabHeaderOptions} />
-      <Stack.Screen name={routes.BookDetail} component={BookDetail} />
+      <Stack.Screen name={routes.BookDetail} component={BookDetail} options={defaultHeaderOpts} />
     </Stack.Navigator>
   );
 }
