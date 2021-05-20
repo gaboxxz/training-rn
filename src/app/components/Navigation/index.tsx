@@ -10,6 +10,7 @@ import * as routes from '@constants/routes';
 import BookDetail from '@app/screens/Home/screens/BookDetail';
 import { secondaryBlue, grey } from '@constants/colors';
 import CustomHeaderButton from '@app/components/CustomHeaderButton';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import HomeScreen from '../../screens/Home';
 import backgroundImage from './assets/bc_nav_bar.png';
 import backButtonImage from './assets/ic_back.png';
@@ -25,6 +26,8 @@ import icSuggest from './assets/tabBar/ic_add_new.png';
 import icSuggestActive from './assets/tabBar/ic_add_new_active.png';
 import icRentals from './assets/tabBar/ic_myrentals.png';
 import icRentalsActive from './assets/tabBar/ic_myrentals_active.png';
+
+import AuthLoadingScreen from '../../screens/auth/index';
 
 const defaultHeaderOpts: StackHeaderOptions = {
   headerStyle: { height: 100 },
@@ -111,4 +114,17 @@ function HomeNavigator() {
   );
 }
 
-export default HomeNavigator;
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      AuthLoading: AuthLoadingScreen,
+      App: HomeNavigator,
+      Auth: Test
+    },
+    {
+      initialRouteName: 'AuthLoading'
+    }
+  )
+);
+
+// export default HomeNavigator;
